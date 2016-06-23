@@ -85,8 +85,16 @@ The graph above shows the percent of the time a song spent climbing on the chart
 
 This graph shows the relationship between total weeks spent on the chart and the number of weeks the song spent climbing to its peak position. The blue and red points show the final position the song held being better or worse than 50, respectively. There is a linear relationship between the number of weeks before a song peaked and the total number of weeks it spent on the chart. Again, we are also able to see the strong influence chart position after 20 weeks plays on a songs length of time on the chart.
 
+![problemgraphs](/images/finalimage.png)
+
+Contrary to my hypothesis, there is no clear relationship between the rate at which a song climbed to its peak position and the number of weeks that it spent on the chart. If anything a slight positive relationship exists meaning that the faster a song reached its peak position, the more weeks it would likely spend on the chart.
+
 CODE:
 ![code](/images/2.png)
 
 ![code](/images/1.png)
+
+![code](/images/code1.png)
+
+
 
