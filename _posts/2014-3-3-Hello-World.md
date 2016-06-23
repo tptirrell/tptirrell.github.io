@@ -16,7 +16,7 @@ each song's score.
 
 ***And the winner is.... Faith Hill with Breathe.***
  
-***pic of faith hill***
+![faith](/Users/timtirrell/tptirrell.github.io/images/faith.jpg)
 
 Here is a list of the top 25 songs of the year. 
 
@@ -67,7 +67,24 @@ After researching this, it turns out that Billboard had a policy at that time to
 
 Graph 4 in the first section shows a clear divide between songs finishing their chart run between positions 80-100 and songs ending between positions 30-50. This happens around 1000 points, and this now makes sense given the 20 week and rank 50 threshold.
 
+***Problem Statement***
 
-Problem Statement
+There is an inverse relationship between the time a song takes to reach its peak position once entering the chart and the total time a song stays on the chart. In other words, the faster a song reaches its peak position, the fewer total weeks it spends on the chart.
+
+To begin thinking about this, I considered the following:
+
+1.	What is the best way to represent a song's ascent? Should this be as the ratio of time spent climbing to the total time spent on the chart? To get this data, I will need to calculate the following: weeks a song was on the chart by counting the weeks not equal to np.nan, the weeks spent climbing which equals the date entered subtracted from the date peaked, and the percent time to peak which is weeks spent climbing divided by weeks on chart.
+2.	What is best way to graphically represent this? I would imagine a scatter plot so that many data points can be shown.
+3.	What other variables may play a role in visualizing this data?
+
+***problem 2***
+
+The graph above shows the percent of the time a song spent climbing on the chart relative to the total time it spent ont the chart. The blue and red points represent songs whose final position was better and worse than 50, respectively. I hypothesized that the faster a song reached its peak, the fewer total weeks it would spend on the chart. There does appear to be a very slight quadratic relationshiph between these variables with the minimum value at 0.50. The stronger relationship is clearly between final position and weeks on chart after 20 weeks.
+
+
+
+This graph shows the relationship between total weeks spent on the chart and the number of weeks the song spent climbing to its peak position. The blue and red points show the final position the song held being better or worse than 50, respectively. There is a linear relationship between the number of weeks before a song peaked and the total number of weeks it spent on the chart. Again, we are also able to see the strong influence chart position after 20 weeks plays on a songs length of time on the chart.
+
+
 
 
