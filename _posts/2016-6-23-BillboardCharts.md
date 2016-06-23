@@ -6,32 +6,32 @@ Before we can get to that though, I had to clean some of the data to a usable fo
 which the song was not on the chart into np.nan so these data can be understood.
 
 Turns out, Billboard used a scoring system where a song is given a set number of points based on its rank for each week that it is on the chart. 100 points is given to the top song of the week and
-1 point to the 100th song. Knowing this, I found the top 25 songs of the year by adding a new columns to the data frame (number of weeks on chart) and calculating
+1 point to the 100th song. Knowing this, I found the top 25 songs of the year by adding a new column to the data frame (number of weeks on chart) and calculating
 each song's score. 
 
 ***And the winner is.... Faith Hill with Breathe.***
  
 ![faith](/images/Faith.png)
 
-Here is a list of the top 25 songs of the year. 
+Here is a list of the top 25 songs of the year ranked by score. 
 
 ![top25](/images/top25.png)
 
-The next thing that I wanted to know was what factors contribute most to a song's score. Below you can see scatter plots score against:
+The next thing that I wanted to know was what factors contribute most to a song's score. Below you can see scatter plots of score against:
 
-1. 	Position the first week it entered the chart
-2. 	The number of weeks it took for the song to peak
-3. 	The percentage of time the track spent climbing to its peak relative to overall time spent on the chart
-4. 	Final chart position
-5. 	Weeks spent on chart
-6. 	Week of calendar year that the song entered the chart
+1. 	Position the first week it entered the chart.
+2. 	The number of weeks it took for the song to peak.
+3. 	The percentage of time the track spent climbing to its peak relative to overall time spent on the chart.
+4. 	Final chart position.
+5. 	Weeks spent on chart.
+6. 	Week of calendar year that the song entered the chart.
 
 ![firstgraphs](/images/set1.png)
 
 ***The interesting takeaways from each chart are:***
 
 1. 	The songs that charted higher on their first week are not significantly more likely to reach a higher score.
-2. 	The songs that reached top scores did not peak until their 30th week on the charts as opposed to hitting top 10 early and staying there.
+2. 	The songs that reached over 3000 points did not peak until their 25th week on the charts as opposed to hitting top 10 early and staying there.
 3. 	The highest scoring songs peaked 50-80% of the way through their time on the charts.
 4. 	Very Interesting - There is a clear cut off around 1000 points for songs with chart position worse than 50. I'll talk about why later.
 5. 	This chart makes sense. The longer a song is on the chart, the more points it will earn.
@@ -39,13 +39,13 @@ The next thing that I wanted to know was what factors contribute most to a song'
 	3000 points debuted in the first half of the year. This may be coincidental given the small sample size.
 
 
-Now, since weeks on chart is a major factor in a song's score, Let's see if there is any relationship between the number of weeks spent on chart
+Now, since weeks on chart is a major factor in a song's score, let's see if there is any relationship between the number of weeks spent on chart
 and these variables:
 
-1.	The number of weeks it took for the song to peak
-2.	Final chart position
-3.	Position the first week it entered the chart
-4.	Week of calendar year that the song entered the chart
+1.	The number of weeks it took for the song to peak.
+2.	Final chart position.
+3.	Position the first week it entered the chart.
+4.	Week of calendar year that the song entered the chart.
 
 ![secondgraphs](/images/set2.png)
 
