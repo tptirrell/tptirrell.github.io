@@ -20,7 +20,7 @@ each song's score.
 
 Here is a list of the top 25 songs of the year. 
 
-***pic of top25***
+![top25](top25.png)
 
 The next thing that I wanted to know was what factors contribute most to a song's score. Below you can see scatter plots score against:
 
