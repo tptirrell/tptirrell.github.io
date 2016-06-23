@@ -5,6 +5,20 @@ Upon looking at Billboard data in the year 2000, the first thing I wanted to kno
 Before we can get to that though, I had to clean some of the data to a usable form -- namely turning the date into pd.datetime standard and turning the weeks in 
 which the song was not on the chart into np.nan so these data can be understood.
 
+CODE: 
+def replace_nulls(value):
+    if value == '*':
+        return np.nan
+    else:
+        return value
+
+df = df.applymap(replace_nulls)
+
+df['date.entered'] = pd.to_datetime(df['date.entered'])
+df['date.peaked'] = pd.to_datetime(df['date.peaked'])
+
+
+
 Turns out, Billboard used a scoring system where a song is given a set number of points based on its rank for each week that it is on the chart. 100 points is given to the top song of the week and
 1 point to the 100th song. Knowing this, I found the top 25 songs of the year by adding a new column to the data frame (number of weeks on chart) and calculating
 each song's score. 
@@ -38,6 +52,47 @@ The next thing that I wanted to know was what factors contribute most to a song'
 6. 	The is no clear relationship between score and the time of year that a song debuted. It may be worth noting that 6 of the 8 songs that 
 	3000 points debuted in the first half of the year. This may be coincidental given the small sample size.
 
+CODE:
+fig = plt.figure(figsize = (18,18))
+
+ax1 = fig.add_subplot(331)
+ax1.scatter(df['x1st.week'],df['score'])
+ax1.set_title("1. Position 1st Week on Chart vs Score")
+ax1.set_xlabel("Position 1st Week on Chart")
+ax1.set_ylabel("Score")
+
+ax2 = fig.add_subplot(332)
+ax2.scatter(df['weekstopeak'],df['score'])
+ax2.set_title("2. Weeks to Peak vs Score")
+ax2.set_xlabel("Weeks to Peak")
+ax2.set_ylabel("Score")
+
+ax3 = fig.add_subplot(333)
+ax3.scatter(df['peak%totaltime'],df['score'])
+ax3.set_title("3. Peak Weeks/Total Time vs Score")
+ax3.set_xlabel("Peak Weeks/Total Time")
+ax3.set_ylabel("Score")
+
+ax4 = fig.add_subplot(334)
+ax4.scatter(df['finalposition'],df['score'])
+ax4.set_title("4. Final Position vs Score")
+ax4.set_xlabel("Final Position")
+ax4.set_ylabel("Score")
+
+ax5 = fig.add_subplot(335)
+ax5.scatter(df['weeksonchart'],df['score'])
+ax5.set_title("5. Weeks on Chart vs Score")
+ax5.set_xlabel("Weeks on Chart")
+ax5.set_ylabel("Score")
+
+ax6 = fig.add_subplot(336)
+ax6.scatter(df['weekofyearentered'],df['score'])
+ax6.set_title("6. Week of Year Entered vs Score")
+ax6.set_xlabel("Week of Year Entered")
+ax6.set_ylabel("Score")
+
+fig.suptitle('What impacts Track Score?', fontsize=21);
+
 
 Now, since weeks on chart is a major factor in a song's score, let's see if there is any relationship between the number of weeks spent on chart
 and these variables:
@@ -55,6 +110,37 @@ and these variables:
 2. Just about every song either spends less than 20 weeks and falls off the chart from a position between 80-100 or spend more than 20 weeks and end at a position between 30-50.
 3. There is no real relationship between number of weeks on chart and the position at which a song enters the charts. As seen on chart two, it is worth noting that there is a collection of songs that ended after 20 weeks on the chart.
 4. There is no real relationship between number of weeks on chart and the week in the calendar year in which it entered the charts. The same concentration of songs that ended on 20 weeks can be seen here as well.
+
+CODE:
+fig = plt.figure(figsize = (16,16))
+
+
+ax1 = fig.add_subplot(221)
+ax1.scatter(df['weekstopeak'],df['weeksonchart'])
+ax1.set_title("1. Weeks to Peak vs Weeks on Chart")
+ax1.set_xlabel("Weeks to Peak")
+ax1.set_ylabel("Weeks on Chart")
+
+
+ax2 = fig.add_subplot(222)
+ax2.scatter(df['finalposition'],df['weeksonchart'])
+ax2.set_title("2. Final Position vs Weeks on Chart")
+ax2.set_xlabel("Final Position")
+ax2.set_ylabel("Weeks on Chart")
+
+ax3 = fig.add_subplot(223)
+ax3.scatter(df['x1st.week'],df['weeksonchart'])
+ax3.set_title("3. Position 1st Week vs Weeks on Chart")
+ax3.set_xlabel("Position 1st Week on Chart")
+ax3.set_ylabel("Weeks on Chart")
+
+ax4 = fig.add_subplot(224)
+ax4.scatter(df['weekofyearentered'],df['weeksonchart'])
+ax4.set_title("4. Week of Year Entered vs Weeks on Chart")
+ax4.set_xlabel("Week of Year Entered")
+ax4.set_ylabel("Weeks on Chart")
+
+fig.suptitle('What impacts Billboard Chart Length?', fontsize=21);
 
 
 After researching this, it turns out that Billboard had a policy at that time to drop a song from the chart if it had already charted for 20 weeks and fell below position 50. This explains the high number of songs on the chart for exactly 50 weeks seen in graphs 3 and 4 and also the only songs with weeks longer than 20 had higher chart positions seen in graph 2.
@@ -80,5 +166,23 @@ The graph above shows the percent of the time a song spent climbing on the chart
 This graph shows the relationship between total weeks spent on the chart and the number of weeks the song spent climbing to its peak position. The blue and red points show the final position the song held being better or worse than 50, respectively. There is a linear relationship between the number of weeks before a song peaked and the total number of weeks it spent on the chart. Again, we are also able to see the strong influence chart position after 20 weeks plays on a songs length of time on the chart.
 
 
+CODE:
+tempdfa = df[df['finalposition']<=50]
+tempdfb = df[df['finalposition']>50]
+plt.scatter(tempdfa['peak%totaltime'],tempdfa['weeksonchart'], color = 'blue');
+plt.scatter(tempdfb['peak%totaltime'],tempdfb['weeksonchart'], color = 'red');
+ax = plt.gca()
+ax.set_xlabel('Percent of Chart Time until Peak')
+ax.set_ylabel('Total Weeks on Chart');
+ax.set_title('Chart Climb Time vs Total Chart Time');
 
+
+tempdfa = df[df['finalposition']<=50]
+tempdfb = df[df['finalposition']>50]
+plt.scatter(tempdfa['weekstopeak'],tempdfa['weeksonchart'], color = 'blue');
+plt.scatter(tempdfb['weekstopeak'],tempdfb['weeksonchart'], color = 'red');
+ax = plt.gca()
+ax.set_xlabel('Weeks to Peak')
+ax.set_ylabel('Total Weeks on Chart');
+ax.set_title('Weeks to Peak vs Total Weeks on Chart');
 
