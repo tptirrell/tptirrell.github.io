@@ -16,7 +16,7 @@ each song's score.
 
 ***And the winner is.... Faith Hill with Breathe.***
  
-![faith](./Users/timtirrell/tptirrell.github.io/images/faith.jpg)
+![faith](../images/faith.jpg)
 
 Here is a list of the top 25 songs of the year. 
 
