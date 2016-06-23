@@ -5,19 +5,6 @@ Upon looking at Billboard data in the year 2000, the first thing I wanted to kno
 Before we can get to that though, I had to clean some of the data to a usable form -- namely turning the date into pd.datetime standard and turning the weeks in 
 which the song was not on the chart into np.nan so these data can be understood.
 
-CODE: 
-def replace_nulls(value):
-    if value == '*':
-        return np.nan
-    else:
-        return value
-
-df = df.applymap(replace_nulls)
-
-df['date.entered'] = pd.to_datetime(df['date.entered'])
-df['date.peaked'] = pd.to_datetime(df['date.peaked'])
-
-
 
 Turns out, Billboard used a scoring system where a song is given a set number of points based on its rank for each week that it is on the chart. 100 points is given to the top song of the week and
 1 point to the 100th song. Knowing this, I found the top 25 songs of the year by adding a new column to the data frame (number of weeks on chart) and calculating
