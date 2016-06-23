@@ -1,8 +1,4 @@
----
-layout: post
-title: You're up and running!
----
-
+***Billboard Data - Year 2000***
 
 Upon looking at Billboard data in the year 2000, the first thing I wanted to know was how the top songs for the year are determined. 
 
