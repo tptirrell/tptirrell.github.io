@@ -14,7 +14,8 @@ is used where a song is given a set number of points based on its rank for each 
 1 point to the 100th song. Knowing this, I found the top 25 songs of the year by adding a new columns to the data frame (number of weeks on chart) and calculating
 each song's score. 
 
-***And the winner is.... Faith Hill with Breathe. *** 
+***And the winner is.... Faith Hill with Breathe.***
+ 
 ***pic of faith hill***
 
 Here is a list of the top 25 songs of the year. 
