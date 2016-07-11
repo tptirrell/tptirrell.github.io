@@ -24,7 +24,7 @@ the highest data science salaries are in San Francisco and Chicago, but the most
 ![postgraph](/images/salaries/postingspercitygraph.png/)
 ![postlist](/images/salaries/postingspercity.png/)
 
-First, I created a True/False column called "SalaryHigh" in the dataframe to indicate of the salary given was above or below the mediaun. I then ran a logistic regression 
+First, I created a True/False column called "SalaryHigh" in the dataframe to indicate of the salary given was above or below the median. I then ran a logistic regression 
 with statsmodel.api using only location as a feature and the "SalaryHigh" column as the target data. Dummy variables were created as these are categorical
 variables. The summary is pictured below. You can see that of the cities listed, location was a stronger predictor of salary for Chicago and 
 San Francisco as the p>|z| score was approximately 0.39. Salaries also happened to be highest in these cities as we saw earlier.
@@ -41,10 +41,10 @@ as well as location using scikit-learn. Below you can see the confusion matrix a
 ![ROC1](/images/salaries/roc.png/)
 
 
-I then added keywords from the company as another feature. These keywords were "Corp", "Analytics", "Univeristy", "Group", "Sofware",
+I then added keywords from the company as another feature. These keywords were "Corp", "Analytics", "University", "Group", "Software",
 "Technology", "Engineer." Again, I used an other for everything else.
 
-I ran the logistic regression again and the model was only slightly changed and for the worse. The precision and recall scores were 77.0% and 86.0%.
+I ran the logistic regression again and the model was slightly changed for the worse. The precision and recall scores were 77.0% and 86.0%.
 
 ![cm2](/images/salaries/cm2.png/)
 ![ROC2](/images/salaries/roc2.png/)
