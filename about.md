@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Tim Tirrell, Data Scientist.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+After working as an engineer for about 10 years, I am currently completing a Data Science immersive program at General Assembly.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[tptirrell@gmail.com](mailto:tptirrell@gmail.com)
