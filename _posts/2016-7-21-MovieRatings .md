@@ -93,7 +93,7 @@ available in these ranges.
 
 ![functions](/images/Movies/9.png/)
 
-**Next Steps: **
+**Next Steps:**
 While this model is a great start in predicting ratings, there are a few areas of improvement that should be explored:
 - Additional data should be obtained with ratings at the extremes, especially higher rated movies.
 - This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
