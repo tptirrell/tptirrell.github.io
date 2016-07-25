@@ -6,11 +6,11 @@ The first step is to find a reliable dataset from which we can build a strong mo
 Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
 I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1.
 
-[code]
+![functions](/images/Movies/10.png/)
 
 The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded the data to a dataframe.
 
-[code]?
+![functions](/images/Movies/11.png/)
 
 Before any analysis, the data required of a lot of prepping:
 
@@ -93,7 +93,7 @@ available in these ranges.
 
 ![functions](/images/Movies/9.png/)
 
-***Next Steps***
+**Next Steps: **
 While this model is a great start in predicting ratings, there are a few areas of improvement that should be explored:
 - Additional data should be obtained with ratings at the extremes, especially higher rated movies.
 - This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
