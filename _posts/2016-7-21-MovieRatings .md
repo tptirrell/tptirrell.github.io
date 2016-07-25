@@ -1,6 +1,6 @@
-***What makes a good movie?***
+#What makes a good movie?
 
-Objective: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
+**Objective**: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
 
 The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York 
 Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
@@ -14,17 +14,18 @@ The next step is to download as much information about each movie as possible. F
 
 Before any analysis, the data required of a lot of prepping:
 
-1) Deleting columns not needed for the model such as Actors, Plot, Title, etc.
-2) Dropping any movie with missing data (excluding Awards or MPAA rating).
-3) Converting runtime, number of votes, and year to integers and IMDB rating to a float.
-4) Dropping any movie with less than 500 votes.
+-Deleting columns not needed for the model such as Actors, Plot, Title, etc.
+-Dropping any movie with missing data (excluding Awards or MPAA rating).
+-Converting runtime, number of votes, and year to integers and IMDB rating to a float.
+-Dropping any movie with less than 500 votes.
 
 
 For simplicity, I binarized Awards and Language. If the word 'Oscar' was mentioned either by nomination or win, the value was set to 1, otherwise 0.
 And the language was broken down to either being released in English or not. For country, I set the country to the first listed (if there were multiple) and included any country with at least 25 movies. The rest were set
 to other. Dummy variables were then created for country, MPAA rating, and genre.
 
-***The Data***
+
+**The Data**
 
 Now that we've finished cleaning, we can now take a closer look at the data. 
 
@@ -53,28 +54,26 @@ movie runtime, and release year, respectively.
 The interesting takeaways from each are:
 
 Number of votes
-
-1) There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
+-There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
 average rating.
-2) Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
+-Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
 foreign films is 6.27.
-3) A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
-4) There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
+-A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
+-There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
 7.0 rating and less than 36k votes were from the USA.
 
 Runtime
-
-1) There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
+-There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
 the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
-2) Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
-3) If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
+-Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
+-If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
 86% of movies with these qualifications are not American.
 
 Release Year
-
-1) Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
+-Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
 and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
 are less likel to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
+
 
 ***Model Building***
 
