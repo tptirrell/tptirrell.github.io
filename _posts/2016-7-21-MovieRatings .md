@@ -3,8 +3,6 @@ layout: post
 title: What Makes a Good Movie
 ---
 
-#What makes a Good Movie?
-
 **Objective**: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
 
 The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York 
