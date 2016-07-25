@@ -84,7 +84,7 @@ are less likel to be receive votes in the first place. An older movie that's eit
 
 We can now run our models. I chose to fit four regression models (Decision Tree, Random Forest, AdaBoost, and Gradient Boosting) and compare to see which perofrms best.
 After splitting the data into training and testing data, fitting the models, running the predictions, the CrossVal scores can be calculated. We can also see which
-features are most important in predicting the IMDb rating. Below are CrossVal scores for each model. We can see the GradientBoosting model performed best with a CV score of 0.755.
+features are most important in predicting the IMDb rating. Below are CrossVal scores for each model. We can see the GradientBoosting model performed best with a CV score of 0.76.
 
 ![functions](/images/Movies/8.png/)
 
