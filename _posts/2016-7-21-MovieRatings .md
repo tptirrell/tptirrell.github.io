@@ -14,10 +14,10 @@ The next step is to download as much information about each movie as possible. F
 
 Before any analysis, the data required of a lot of prepping:
 
--Deleting columns not needed for the model such as Actors, Plot, Title, etc.
--Dropping any movie with missing data (excluding Awards or MPAA rating).
--Converting runtime, number of votes, and year to integers and IMDB rating to a float.
--Dropping any movie with less than 500 votes.
+- Deleting columns not needed for the model such as Actors, Plot, Title, etc.
+- Dropping any movie with missing data (excluding Awards or MPAA rating).
+- Converting runtime, number of votes, and year to integers and IMDB rating to a float.
+- Dropping any movie with less than 500 votes.
 
 
 For simplicity, I binarized Awards and Language. If the word 'Oscar' was mentioned either by nomination or win, the value was set to 1, otherwise 0.
@@ -54,23 +54,23 @@ movie runtime, and release year, respectively.
 The interesting takeaways from each are:
 
 Number of votes
--There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
+- There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
 average rating.
--Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
+- Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
 foreign films is 6.27.
--A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
--There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
+- A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
+- There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
 7.0 rating and less than 36k votes were from the USA.
 
 Runtime
--There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
+- There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
 the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
--Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
--If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
+- Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
+- If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
 86% of movies with these qualifications are not American.
 
 Release Year
--Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
+- Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
 and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
 are less likel to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
@@ -95,9 +95,9 @@ available in these ranges.
 
 ***Next Steps***
 While this model is a great start in predicting ratings, there are a few areas of improvement that should be explored:
-1) Additional data should be obtained with ratings at the extremes, especially higher rated movies.
-2) This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
-3) Pulling data from additional ratings websites should be considered. While IMDb may be the most popular, it certainly isn't the only one.
+- Additional data should be obtained with ratings at the extremes, especially higher rated movies.
+- This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
+- Pulling data from additional ratings websites should be considered. While IMDb may be the most popular, it certainly isn't the only one.
 
 
 
