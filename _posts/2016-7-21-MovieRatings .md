@@ -65,7 +65,7 @@ average rating.
 - Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
 foreign films is 6.27.
 - A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
-- There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
+- There is a high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
 7.0 rating and less than 36k votes were from the USA.
 
 Runtime
