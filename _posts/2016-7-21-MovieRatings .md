@@ -13,6 +13,7 @@ The next step is to download as much information about each movie as possible. F
 [code]?
 
 Before any analysis, the data required of a lot of prepping:
+
 1) Deleting columns not needed for the model such as Actors, Plot, Title, etc.
 2) Dropping any movie with missing data (excluding Awards or MPAA rating).
 3) Converting runtime, number of votes, and year to integers and IMDB rating to a float.
@@ -24,6 +25,7 @@ And the language was broken down to either being released in English or not. For
 to other. Dummy variables were then created for country, MPAA rating, and genre.
 
 ***The Data***
+
 Now that we've finished cleaning, we can now take a closer look at the data. 
 
 The dataset includes 5,527 movies with a relatively balanced distribution of IMDb ratings. There is a deficiency of movies rated above 9 simply
@@ -49,7 +51,9 @@ movie runtime, and release year, respectively.
 ![functions](/images/Movies/6.png/)
 
 The interesting takeaways from each are:
+
 Number of votes
+
 1) There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
 average rating.
 2) Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
@@ -59,6 +63,7 @@ foreign films is 6.27.
 7.0 rating and less than 36k votes were from the USA.
 
 Runtime
+
 1) There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
 the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
 2) Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
@@ -66,20 +71,22 @@ the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes,
 86% of movies with these qualifications are not American.
 
 Release Year
+
 1) Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
 and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
 are less likel to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
 ***Model Building***
+
 We can now run our models. I chose to fit four regression models (Decision Tree, Random Forest, AdaBoost, and Gradient Boosting) and compare to see which perofrms best.
 After splitting the data into training and testing data, fitting the models, running the predictions, the CrossVal scores can be calculated. We can also see which
 features are most important in predicting the IMDb rating. Below are CrossVal scores for each model. We can see the GradientBoosting model performed best.
 
-![functions](/images/Movies/7.png/)
+![functions](/images/Movies/8.png/)
 
 The most important features are:
 
-![functions](/images/Movies/8.png/)
+![functions](/images/Movies/7.png/)
 
 Finally, we can graph the predicted ratings from the GB model against the actual ratings from the test set to visualize model performance. We can see the model
 predicts rather well but with more errors at the high and low end of the dataset with respect to rating. This is most likely due to less data
