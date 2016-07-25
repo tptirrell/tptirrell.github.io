@@ -11,11 +11,11 @@ The first step is to find a reliable dataset from which we can build a strong mo
 Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
 I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1. Code below:
 
-![functions](/images/Movies/10.png/)
+![functions](/images/Movies/10.png)
 
 The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded the data to a dataframe. Code below:
 
-![functions](/images/Movies/11.png/)
+![functions](/images/Movies/11.png)
 
 Before any analysis, the data required of a lot of prepping:
 
@@ -37,24 +37,24 @@ Now that we've finished cleaning, we can now take a closer look at the data.
 The dataset includes 5,527 movies with a relatively balanced distribution of IMDb ratings. There is a deficiency of movies rated above 9 simply
 because there aren't many movies with such a high rating and more than 500 votes.
 
-![functions](/images/Movies/1.png/)
+![functions](/images/Movies/1.png)
 
 We should also note that the data clearly skewes to movies released more recently with a median release year of 2004.
 
-![functions](/images/Movies/2.png/)
+![functions](/images/Movies/2.png)
 
 Also, a majority of movies in the dataset were released in the United States as can be seen below.
 
-![functions](/images/Movies/3.png/)
+![functions](/images/Movies/3.png)
 
 
 
 Enough about distribution, let's see what actually impacts IMDb rating.  Below are three graphs showing rating plotted against number of votes,
 movie runtime, and release year, respectively.
 
-![functions](/images/Movies/4.png/)
-![functions](/images/Movies/5.png/)
-![functions](/images/Movies/6.png/)
+![functions](/images/Movies/4.png)
+![functions](/images/Movies/5.png)
+![functions](/images/Movies/6.png)
 
 The interesting takeaways from each are:
 
@@ -86,17 +86,17 @@ We can now run our models. I chose to fit four regression models (Decision Tree,
 After splitting the data into training and testing data, fitting the models, running the predictions, the CrossVal scores can be calculated. We can also see which
 features are most important in predicting the IMDb rating. Below are CrossVal scores for each model. We can see the GradientBoosting model performed best with a CV score of 0.76.
 
-![functions](/images/Movies/8.png/)
+![functions](/images/Movies/8.png)
 
 The three most important features are, not suprisingly, number of votes, movie runtime, and year released for reasens laid out above.
 
-![functions](/images/Movies/7.png/)
+![functions](/images/Movies/7.png)
 
 Finally, we can graph the predicted ratings from the GB model against the actual ratings from the test set to visualize model performance. We can see the model
 predicts rather well but with more errors at the high and low end of the dataset with respect to rating. This is most likely due to less data
 available in these ranges.
 
-![functions](/images/Movies/9.png/)
+![functions](/images/Movies/9.png)
 
 **Next Steps:**
 While this model is a great start in predicting ratings, there are a few areas for improvement that should be explored:
