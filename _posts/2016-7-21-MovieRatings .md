@@ -1,64 +1,97 @@
 ***What makes a good movie?***
 
-Objective: To review and analyze data from the best and worst movie lists and build a model that will predict the IMDb score of a movie.
+Objective: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
 
-First thing that we want to do is obtain a set of good and bad movies. I chose the NYTimes list of best 1000 ever made (http://www.nytimes.com/ref/movies/1000best.html) and 
-Wikipedia's list of worst movies (https://en.wikipedia.org/wiki/List_of_films_considered_the_worst). These lists are scraped using Beautiful Soup.
+The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York 
+Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
+I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1.
 
 [code]
 
-The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded to a dataframe.
+The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded the data to a dataframe.
 
 [code]?
 
-
-After cleaning up the data, we can now take a closer look. Below are graphs of best movies and worst movies by country. (Note: If there were multiple
-countries listed for a movie, the first was used.)
-
-[best and worst movies by country]
-
-[english/not english]
+Before any analysis, the data required of a lot of prepping:
+1) Deleting columns not needed for the model such as Actors, Plot, Title, etc.
+2) Dropping any movie with missing data (excluding Awards or MPAA rating).
+3) Converting runtime, number of votes, and year to integers and IMDB rating to a float.
+4) Dropping any movie with less than 500 votes.
 
 
+For simplicity, I binarized Awards and Language. If the word 'Oscar' was mentioned either by nomination or win, the value was set to 1, otherwise 0.
+And the language was broken down to either being released in English or not. For country, I set the country to the first listed (if there were multiple) and included any country with at least 25 movies. The rest were set
+to other. Dummy variables were then created for country, MPAA rating, and genre.
+
+***The Data***
+Now that we've finished cleaning, we can now take a closer look at the data. 
+
+The dataset includes 5,527 movies with a relatively balanced distribution of IMDb ratings. There is a deficiency of movies rated above 9 simply
+because there aren't many movies with such a high rating and more than 500 votes.
+
+![functions](/images/Movies/1.png/)
+
+We should also note that the data clearly skewes to movies released more recently with a median release year of 2004.
+
+![functions](/images/Movies/2.png/)
+
+Also, a majority of movies in the dataset were released in the United States as can be seen below.
+
+![functions](/images/Movies/3.png/)
 
 
-![functions](/images/Titanic/survivalper.png/)
-![functions](/images/Titanic/percentagetable.png/)
 
-Before we run a logistic regression, we'll need to choose the features. I broke out class by gender so that our features are child, first class male, 
-first class female, second class male, etc.
+Enough about distribution, let's see what actually impacts IMDb rating.  Below are three graphs showing rating plotted against number of votes,
+movie runtime, and release year, respectively.
 
-The coefficients of the regression are listed below, and you can see the likelihood of survival increases with class and decreases for males over females.
+![functions](/images/Movies/4.png/)
+![functions](/images/Movies/5.png/)
+![functions](/images/Movies/6.png/)
 
-![functions](/images/Titanic/coefs.png/)
-![functions](/images/Titanic/coefstable.png/)
+The interesting takeaways from each are:
+Number of votes
+1) There is a clear positive relationship between number of votes and rating. Almost every movie with more than 200k votes has an above
+average rating.
+2) Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
+foreign films is 6.27.
+3) A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
+4) There is a very high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
+7.0 rating and less than 36k votes were from the USA.
 
-The cross val score for this model is 0.7896, and the confusion matrix is below:
+Runtime
+1) There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
+the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
+2) Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
+3) If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
+86% of movies with these qualifications are not American.
 
-![functions](/images/Titanic/cm1.png/)
+Release Year
+1) Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
+and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
+are less likel to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
-The confusion matrix tells us that the model is very accurately predicting survivors (precision score = 88%) but is also predicting many as survived that actually were deceased (recall score = 54%). In other words, we're predicting almost all survivors accurately at the expense of also predicting almost half of the deceased as also survivors.
+***Model Building***
+We can now run our models. I chose to fit four regression models (Decision Tree, Random Forest, AdaBoost, and Gradient Boosting) and compare to see which perofrms best.
+After splitting the data into training and testing data, fitting the models, running the predictions, the CrossVal scores can be calculated. We can also see which
+features are most important in predicting the IMDb rating. Below are CrossVal scores for each model. We can see the GradientBoosting model performed best.
 
-The ROC curve for this model looks like this:
+![functions](/images/Movies/7.png/)
 
-![functions](/images/Titanic/roc1.png/)
+The most important features are:
 
-The ROC curve is the relationship between False positives and True Positives. As the model accuracy improves by accuraretely prediciting more true positives, the false positives also increase. This ROC curve shows a very strong model.
+![functions](/images/Movies/8.png/)
 
+Finally, we can graph the predicted ratings from the GB model against the actual ratings from the test set to visualize model performance. We can see the model
+predicts rather well but with more errors at the high and low end of the dataset with respect to rating. This is most likely due to less data
+available in these ranges.
 
-We then run Gridsearch with logistic regression to find the best parameters, and they are as follows:
+![functions](/images/Movies/9.png/)
 
-![functions](/images/Titanic/params1.png/)
+***Next Steps***
+While this model is a great start in predicting ratings, there are a few areas of improvement that should be explored:
+1) Additional data should be obtained with ratings at the extremes, especially higher rated movies.
+2) This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
+3) Pulling data from additional ratings websites should be considered. While IMDb may be the most popular, it certainly isn't the only one.
 
-We can also compare Gridsearch with kNN to see how these best parameters compare, and we see that the score is slightly higher with kNN.:
-
-![functions](/images/Titanic/param2.png/)
-
-We can then rerun our model with these paramaters and compare the confusion matrix and ROC curve.
-
-![functions](/images/Titanic/cm2.png/)
-![functions](/images/Titanic/roc2.png/)
-
-The accuracy of this model is just slightly higher with a score of 0.8000 as compared to 0.7966 with the first model.
 
 
