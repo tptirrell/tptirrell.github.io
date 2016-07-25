@@ -103,7 +103,7 @@ available in these ranges.
 
 **Next Steps:**
 
-While this model is a great start in predicting ratings, there are a few areas for improvement that should be explored:
+While this model is a great start in predicting ratings, there are a few areas for improvement that should be explored.
 - Additional data should be obtained with ratings at the extremes, especially higher rated movies.
 - This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
 - Pulling data from additional ratings websites should be considered. While IMDb may be the most popular, it certainly isn't the only one.
