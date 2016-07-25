@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Makes a Good Movie
+title: What Makes a Good Movie?
 ---
 
 **Objective**: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
