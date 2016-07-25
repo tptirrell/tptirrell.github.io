@@ -4,11 +4,11 @@
 
 The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York 
 Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
-I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1.
+I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1. Code below:
 
 ![functions](/images/Movies/10.png/)
 
-The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded the data to a dataframe.
+The next step is to download as much information about each movie as possible. For this, I used OMDb API and loaded the data to a dataframe. Code below:
 
 ![functions](/images/Movies/11.png/)
 
