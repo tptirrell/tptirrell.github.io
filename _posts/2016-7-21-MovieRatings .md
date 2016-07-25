@@ -80,7 +80,7 @@ Release Year
 
 - Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
 and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
-are less likel to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
+are less likely to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
 
 ***Model Building***
