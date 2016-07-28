@@ -29,7 +29,7 @@ Before getting to Principal Component Analysis, I ran the clustering methods on 
 
 **K-Means Clustering**
 After scaling the data using the StandardScarler in sklearn, I ran a k-means clustering and measure with a silhouette score. We need 
-to determine the number of clusters,k, so we can fit the model a few times until we find the maximum silhouette score which happens to be 0.292
+to determine the number of clusters,k, so we can fit the model a few times until we find the maximum silhouette score which happens to be 0.290
 with a k value equal to 5. Code below:
 
 ![functions](/images/airport/kmeans1.png)
