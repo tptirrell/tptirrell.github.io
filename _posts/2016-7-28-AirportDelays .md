@@ -65,9 +65,9 @@ less than or greater than the median delay. After running the logistic regressio
 ![functions](/images/airport/logfeatures.png)
 
 **Recommendations**
--  Take a closer look at the AAL region to determine what additional conditions were present that caused the dramatic increase in on-time percentage.
--  ANM, for being the region with the most departures, had the highest consistent OT%. What conditions were present here to maintain that rate?
--  According to the logistic regression, block delay is the single largest contributor to gate arrival delays. How can we decrease this moving forward?
+First,Take a closer look at the AAL region to determine what additional conditions were present that caused the dramatic increase in on-time percentage.
+Secondly, ANM, for being the region with the most departures, had the highest consistent OT%. What conditions were present here to maintain that rate?
+Finally, According to the logistic regression, block delay is the single largest contributor to gate arrival delays. How can we decrease this moving forward?
 
 
 
