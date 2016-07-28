@@ -61,6 +61,7 @@ The silhouette scores were 0.315 and 0.566, respectively which shows an improvem
 **Logistic Regression**
 Finally, I ran a logistic regression to be able to determine which features are most correlated with delays. I created a binary feature if the avg gate arrival delay was 
 less than or greater than the median delay. After running the logistic regression, the features most correlated with delays are: Avg Block Delay, Airport Departure Delay, Block Delay, and Gate Depart Delay.
+The accuracy score for this model was 0.862.
 
 ![functions](/images/airport/logfeatures.png)
 
