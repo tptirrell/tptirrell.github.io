@@ -29,13 +29,13 @@ Before getting to Principal Component Analysis, I ran the clustering methods on 
 
 **K-Means Clustering**
 After scaling the data using the StandardScarler in sklearn, I ran a k-means clustering and measure with a silhouette score. We need 
-to determine the number of clusters,k, so we can fit the model a few times until we find the maxinum silhouette score which happens to be 0.292
+to determine the number of clusters,k, so we can fit the model a few times until we find the maximum silhouette score which happens to be 0.292
 with a k value equal to 5. Code below:
 
 ![functions](/images/airport/kmeans1.png)
 
 **Hierarchical Clustering**
-The second clustering method I chose was Hierarhical which I ran with the code below. The cophenetic correlation coefficient, c, compares the pairwise
+The second clustering method I chose was Hierarchical which I ran with the code below. The cophenetic correlation coefficient, c, compares the pairwise
 distances to those implied by the hierarchical clustering. The c, in this case, is 0.782 with a maximum value of 1. The silhouette score was also calculated to 
 be: 0.539. Code below:
 
