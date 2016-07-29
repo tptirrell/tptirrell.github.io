@@ -59,16 +59,22 @@ The silhouette scores were 0.315 and 0.566, respectively which shows an improvem
 ![functions](/images/airport/dendrogram2.png)
 
 **Logistic Regression**
-Finally, I ran a logistic regression to be able to determine which features are most correlated with delays. I created a binary feature if the avg gate arrival delay was 
-less than or greater than the median delay. After running the logistic regression, the features most correlated with delays are: Avg Block Delay, Airport Departure Delay, Block Delay, and Gate Depart Delay.
-The accuracy score for this model was 0.862.
+I also ran a logistic regression on the clustered data to be able to determine which features are most correlated with delays. I created a binary feature if the avg gate arrival delay was 
+less than or greater than the median delay. After running the logistic regression, the single largest contributor to delays is avg taxi out time.
+The accuracy score for this model was 0.872.
 
 ![functions](/images/airport/logfeatures.png)
 
+**Random Forest
+Finally, I ran a random forest classifier with the same data as above to see if there were any differences. The most important features were size of airport
+(number of departures and arrivals) and also taxi time which is consistent with above. The accuracy score for this model 0.941.
+
+![functions](/images/airport/forestfeatures.png)
+
 **Recommendations**
-First,Take a closer look at the AAL region to determine what additional conditions were present that caused the dramatic increase in on-time percentage.
+First, take a closer look at the AAL region to determine what additional conditions were present that caused the dramatic increase in on-time percentage.
 Secondly, ANM, for being the region with the most departures, had the highest consistent OT%. What conditions were present here to maintain that rate?
-Finally, According to the logistic regression, block delay is the single largest contributor to gate arrival delays. How can we decrease this moving forward?
+Finally, taxi delays seem to be the largest contributors to overall delays without respect to airport size. A deeper investigation should be condiucted into root causes and what can be done to minimize delay here.
 
 
 
