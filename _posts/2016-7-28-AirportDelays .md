@@ -65,7 +65,7 @@ The accuracy score for this model was 0.872.
 
 ![functions](/images/airport/logfeatures.png)
 
-**Random Forest
+**Random Forest**
 Finally, I ran a random forest classifier with the same data as above to see if there were any differences. The most important features were size of airport
 (number of departures and arrivals) and also taxi time which is consistent with above. The accuracy score for this model 0.941.
 
