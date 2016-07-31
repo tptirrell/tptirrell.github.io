@@ -74,7 +74,7 @@ Finally, I ran a random forest classifier with the same data as above to see if 
 **Recommendations**
 First, take a closer look at the AAL region to determine what additional conditions were present that caused the dramatic increase in on-time percentage.
 Secondly, ANM, for being the region with the most departures, had the highest consistent OT%. What conditions were present here to maintain that rate? On the same token, AEA had consistently 
-the lowest OT%. Attention should be focused in this region first. Finally, taxi delays seem to be the largest contributors to overall delays without respect to airport size. A deeper investigation should be condiucted into root causes and what can be done to minimize delay here.
+the lowest OT%. Attention should be focused in this region first. Finally, taxi delays seem to be the largest contributors to overall delays without respect to airport size. A deeper investigation should be conducted into root causes and what can be done to minimize delay here.
 
 
 
