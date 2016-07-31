@@ -3,7 +3,7 @@ layout: post
 title: Predicting Salaries
 ---
 
-Objective: To collect data science salary data from www.indeed.com and build a model to predict salary based on location, job title, 
+**Objective:** To collect data science salary data from www.indeed.com and build a model to predict salary based on location, job title, 
 and company information.
 
 The first step was to scrape the data using BeautifulSoup. A total of 500 listings were taken from each of the five cities -- Austin, 
