@@ -3,7 +3,7 @@ layout: post
 title: Billboard Data - Year 2000
 ---
 
-Objective: To review track information for the top songs from the year 2000 to identify correlations in top performing songs.
+**Objective:** To review track information for the top songs from the year 2000 to identify correlations in top performing songs.
 
 Upon looking at Billboard data in the year 2000, the first thing I wanted to know was how the top songs for the year are determined. 
 
