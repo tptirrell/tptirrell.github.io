@@ -9,7 +9,7 @@ email: tptirrell@gmail.com
 # Short bio or description (displayed in the header)
 description: Data Extraordinaire
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://media.licdn.com/media/AAEAAQAAAAAAAAk2AAAAJDI4ZDFmZDU4LTA2NTYtNDA3MS05NTA5LTRiMzM5NGUyMjk0ZQ.jpg
+avatar: https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAfjAAAAJDVmNjkwMTI0LTE4ZDYtNGZjNS1hZDkzLTc2MzU0MDk2YTAwMg.jpg
 
 #
 # Flags below are optional
@@ -26,7 +26,7 @@ footer-links:
   linkedin:
   pinterest:
   rss: RSSICON
-  twitter: 
+  twitter:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
