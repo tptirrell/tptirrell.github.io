@@ -68,20 +68,19 @@ foreign films is 6.27.
 
 Runtime
 
-- There is a positive relationship between the length of the movie and its rating. For movies runtimes less than and greater than 120 minutes
-the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
+- There is a positive relationship between the length of the movie and its rating. For movies with runtimes less than and greater than 120 minutes, the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes, the mean rating is a shocking 8.1!
 - Movies longer than 2.5 hours (150 minutes) are likely to be foreign by almost 2:1.  
 - If a long movie (runtime greater than 120 minutes) has a low rating (less than 5), it is overwhelmingly likely to be a foreign film. More than
 86% of movies with these qualifications are not American.
 
 Release Year
 
-- Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
-and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and
+- Only 5.5% of movies before 1980 have an "average" rating (with average being between 5 and 7) -- meaning as people rate older movies, their impressions are almost binary
+and these movies have either very high or very low ratings as a result. Also, movies from this time period that are average don't stand out and
 are less likely to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
 
-***Model Building***
+**Model Building**
 
 We can now run our models. I chose to fit four regression models (Decision Tree, Random Forest, AdaBoost, and Gradient Boosting) and compare to see which performs best.
 After splitting the data into training and testing data, fitting the models, running the predictions, the CrossVal scores can be calculated. We can also see which
