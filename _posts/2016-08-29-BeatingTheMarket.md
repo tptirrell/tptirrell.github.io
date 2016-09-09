@@ -19,7 +19,7 @@ Exploring the data a bit, I found something very interesting. The below plots sh
 ![functions](/images/Market/2a.png)
 ![functions](/images/Market/3a.png)
 
-If we then look at the length of time that each trade was held against the return percentage, we can again see the trend of trades that were held longer, were far more likely to be negative. Interestingly, every trade that signaled to buy and sell in under 10 days had a positive return.
+If we then look at the length of time that each trade was held against the return percentage, we can again see the trend of trades that were held longer were far more likely to be negative. Interestingly, every trade that signaled to buy and sell in under 10 days had a positive return.
 
 ![functions](/images/Market/4.jpg)
 
