@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Tim Tirrell, Data Scientist.
+Tim Tirrell, Data Scientist and Problem Solver.
 
 ### More Information
 
-After working as an engineer for about 10 years, I am currently completing a Data Science immersive program at General Assembly.
+ I worked for 10 years as an engineer in different capacities and wanted to focus this experience and take data analysis a step further. I'm now able to explore a data set to find hidden trends/correlations, build predictive models, and visualize data to tell a story that will ultimately lead to better business decisions.
 
 ### Contact me
 
