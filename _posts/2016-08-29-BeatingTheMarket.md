@@ -37,7 +37,7 @@ So, the models are actually able to classify the trades we should keep from the 
 ***Back to square one...***
 I looked at every feature and if there was anything else that I was missing. I noticed a slight variation in the moving averages between the trades that were profitable and not. The below histogram shows the difference between the 20 and 50 day moving averages relative to the 20 day moving average. Turns out, there is a clear difference in this ratio between the trades we want to keep and the one want to drop, and if we keep all trades with a ratio less than 0.0035, we will keep 79.3% of the trades we want and only 14.1% of those we don't.
 
-![functions](/images/Market/6.jpg)
+![functions](/images/Market/6.png)
 
 ***Results***
 Using the RSI as a buy/sell indicator and the above ratio of moving averages as a classification point, I was able to outperform the stock market from 2014-2016 by 1.7% annually.
