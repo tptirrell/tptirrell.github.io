@@ -39,13 +39,13 @@ I looked at every feature and if there was anything else that I was missing. I n
 
 ![functions](/images/Market/6.png)
 
-***Results***
+**Results:**
 Using the RSI as a buy/sell indicator and the above ratio of moving averages as a classification point, I was able to outperform the stock market from 2014-2016 by 1.7% annually.
 
 
 **Next Steps:**
 There are areas for improvement and further analysis within this project. A few first steps are:
-1. Use Time Series to find ideal buy/sell signals. Right now, I am using only RSI as a static indicator.
-2. Investigate expanding to more than 100 ETFs (and with no commission fees). This will hopefully allow for slightly better classification. Also, commission fees were not taken into consideration which will dramatically affect the final return percentage.
-3. Identify a more dynamic "cutoff" period. Using 10 days across the board is certainly not ideal.
-4. Finally, watch the model performance in real time for 3 months to see actual returns.
+ - Use Time Series to find ideal buy/sell signals. Right now, I am using only RSI as a static indicator.
+ - Investigate expanding to more than 100 ETFs (and with no commission fees). This will hopefully allow for slightly better classification. Also, commission fees were not taken into consideration which will dramatically affect the final return percentage.
+ - Identify a more dynamic "cutoff" period. Using 10 days across the board is certainly not ideal.
+ - Finally, watch the model performance in real time for 3 months to see actual returns.
