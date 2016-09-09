@@ -5,8 +5,8 @@ title: What Makes a Good Movie?
 
 **Objective**: To collect movie data including ratings, visualize the movie attributes against the ratings to determine any correlations, and build a tree based model to predict movie ratings.
 
-The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York 
-Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com, 
+The first step is to find a reliable dataset from which we can build a strong model. I started by using the 1000 best movies of all times according to the New York
+Times, but I decided that a model to predict rating should also include bad movies as well. From IMDb.com,
 I scraped 100 movies with the highest number of votes from each rating between 3 and 10 stepping by 0.1. Code below:
 
 ![functions](/images/Movies/10.png)
@@ -30,14 +30,14 @@ to other. Dummy variables were then created for country, MPAA rating, and genre.
 
 **The Data**
 
-Now that we've finished cleaning, we can now take a closer look at the data. 
+Now that we've finished cleaning, we can now take a closer look at the data.
 
 The dataset includes 5,527 movies with a relatively balanced distribution of IMDb ratings. There is a deficiency of movies rated above 9 simply
 because there aren't many movies with such a high rating and more than 500 votes.
 
 ![functions](/images/Movies/1.png)
 
-We should also note that the data clearly skewes to movies released more recently with a median release year of 2004.
+We should also note that the data clearly skews to movies released more recently with a median release year of 2004.
 
 ![functions](/images/Movies/2.png)
 
@@ -63,7 +63,7 @@ average rating.
 - Foreign movies are more likely to have a higher rating across the board. The mean rating for American movies is 5.81 while the mean for
 foreign films is 6.27.
 - A movie receiving more than 200k votes is far more likely to be American. More than 84% of movies with 200k votes were from the USA.
-- There is a high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better 
+- There is a high concentration of foreign movies with a very high rating and few votes. In fact, less than 13% of movies with a better
 7.0 rating and less than 36k votes were from the USA.
 
 Runtime
@@ -77,7 +77,7 @@ the mean rating is 5.6 and 7.2 respectively. For movies longer than 180 minutes,
 Release Year
 
 - Only 5.5% of movies before 1980 have an average rating (between 5 and 7) meaning as people rate older movies, their impressions are almost binary
-and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and 
+and these movies have either very high or very low ratings as a result. Also, movies from this time period that are "average" don't stand out and
 are less likely to be receive votes in the first place. An older movie that's either great or awful is more likely to receive the attention and also the votes.
 
 
@@ -89,7 +89,7 @@ features are most important in predicting the IMDb rating. Below are CrossVal sc
 
 ![functions](/images/Movies/8.png)
 
-The three most important features are, not suprisingly, number of votes, movie runtime, and year released for reasons laid out above.
+The three most important features are, not surprisingly, number of votes, movie runtime, and year released for reasons laid out above.
 
 ![functions](/images/Movies/7.png)
 
@@ -106,6 +106,3 @@ While this model is a great start in predicting ratings, there are a few areas f
 - Additional data should be obtained with ratings at the extremes, especially higher rated movies.
 - This model does not take into account actors, writers, or directors. These can absolutely influence a movie's rating.
 - Pulling data from additional ratings websites should be considered. While IMDb may be the most popular, it certainly isn't the only one.
-
-
-
