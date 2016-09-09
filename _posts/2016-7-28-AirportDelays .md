@@ -28,9 +28,8 @@ highest OT% over the 10 year span.
 Before getting to Principal Component Analysis, I ran the clustering methods on the data as-is to get a baseline.
 
 **K-Means Clustering**
-After scaling the data using the StandardScarler in sklearn, I ran a k-means clustering and measure with a silhouette score. We need
-to determine the number of clusters,k, so we can fit the model a few times until we find the maximum silhouette score which happens to be 0.290
-with a k value equal to 5. Code below:
+After scaling the data using the StandardScarler in sklearn, I ran a k-means clustering and measured with a silhouette score. We need
+to determine the number of clusters, k, so we can fit the model a few times until we find the maximum silhouette score which happens to be 0.290 with a k value equal to 5. Code below:
 
 ![functions](/images/airport/kmeans1.png)
 
@@ -47,7 +46,7 @@ The resultant dendrogram is below:
 
 **PCA**
 The next step is PCA. First, I found the covariance matrix and with that was able to find EigenValues and EigenVectors. The explained variance
-was then calculated by dividing each EigenValue by the sum of all the EigenValues. By sorting and finding the cumulative sum, you can verify the 
+was then calculated by dividing each EigenValue by the sum of all the EigenValues. By sorting and finding the cumulative sum, you can verify the
 variance explained by the number of components. In this case, using three principal components, 86% of the variance is explained. The new components
 were then plotted on a 3D plot.
 
@@ -59,7 +58,7 @@ The silhouette scores were 0.315 and 0.566, respectively which shows an improvem
 ![functions](/images/airport/dendrogram2.png)
 
 **Logistic Regression**
-I also ran a logistic regression on the clustered data to be able to determine which features are most correlated with delays. I created a binary feature if the avg gate arrival delay was
+I also ran a logistic regression on the clustered data to be able to determine which features are most correlated with delays. I created a binary feature of the avg gate arrival delay was
 less than or greater than the median delay. After running the logistic regression, the single largest contributor to delays is avg taxi out time.
 The accuracy score for this model was 0.872.
 
