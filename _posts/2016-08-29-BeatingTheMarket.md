@@ -45,7 +45,7 @@ Using the RSI as a buy/sell indicator and the above ratio of moving averages as 
 
 **Next Steps:**
 There are areas for improvement and further analysis within this project. A few first steps are:
- - Use Time Series to find ideal buy/sell signals. Right now, I am using only RSI as a static indicator.
- - Investigate expanding to more than 100 ETFs (and with no commission fees). This will hopefully allow for slightly better classification. Also, commission fees were not taken into consideration which will dramatically affect the final return percentage.
- - Identify a more dynamic "cutoff" period. Using 10 days across the board is certainly not ideal.
- - Finally, watch the model performance in real time for 3 months to see actual returns.
+- Use Time Series to find ideal buy/sell signals. Right now, I am using only RSI as a static indicator.
+- Investigate expanding to more than 100 ETFs (and with no commission fees). This will hopefully allow for slightly better classification. Also, commission fees were not taken into consideration which will dramatically affect the final return percentage.
+- Identify a more dynamic "cutoff" period. Using 10 days across the board is certainly not ideal.
+- Finally, watch the model performance in real time for 3 months to see actual returns.
